@@ -1,6 +1,9 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import model.Text;
+import model.Word;
+
 public class TextProcessorTest {
 
     @Test
@@ -20,7 +23,6 @@ public class TextProcessorTest {
         Text text = new Text("Java     is\t\tcool.");
         String result = text.toString();
 
-        // перевіряємо, що немає зайвих пробілів
         assertFalse(result.contains("  "));
     }
 
