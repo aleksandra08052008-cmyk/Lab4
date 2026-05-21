@@ -78,3 +78,4 @@ __Висновок__
 Додатково було виконано обробку тексту з нормалізацією пробілів та табуляцій.
 
 __Відео__
+https://drive.google.com/file/d/1DgYyupIRjGaaUiGeDHiKTatresJR_kcf/view?usp=sharing
