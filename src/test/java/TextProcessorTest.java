@@ -1,15 +1,44 @@
-import model.Text;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TextProcessorTest {
 
     @Test
-    void testTextNotNull() {
+    void testTextCreationNotNull() {
+        Text text = new Text("Java   is   powerful. Java is simple.");
+        assertNotNull(text);
+    }
 
-        Text text = new Text("Java is good. Java is fast.");
+    @Test
+    void testTextToStringNotEmpty() {
+        Text text = new Text("Hello world.");
+        assertFalse(text.toString().isEmpty());
+    }
 
-        assertNotNull(text.toString());
+    @Test
+    void testWhitespaceNormalization() {
+        Text text = new Text("Java     is\t\tcool.");
+        String result = text.toString();
+
+        // перевіряємо, що немає зайвих пробілів
+        assertFalse(result.contains("  "));
+    }
+
+    @Test
+    void testSentenceStructureExists() {
+        Text text = new Text("One sentence. Second sentence.");
+        assertTrue(text.toString().contains("."));
+    }
+
+    @Test
+    void testWordBreakdownLogic() {
+        Word word = new Word("Java");
+        assertEquals("Java", word.toString());
+    }
+
+    @Test
+    void testLetterInsideWord() {
+        Word word = new Word("A");
+        assertEquals("A", word.toString());
     }
 }
